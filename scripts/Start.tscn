@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://bag8glpk5nvfp"]
+
+[ext_resource type="Script" uid="uid://d1nddqraplhqo" path="res://scripts/Start.gd" id="1_g26y7"]
+[ext_resource type="Script" uid="uid://c1sbkubk2qr8j" path="res://scripts/GameManager.gd" id="2_oasli"]
+[ext_resource type="Texture2D" uid="uid://c3mbx800ea7ko" path="res://imagenes/inicio.jpg" id="3_hh73t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oasli"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g26y7")
+
+[node name="LBL_TITULO" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 150.0
+offset_right = 500.0
+offset_bottom = 250.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.921708, 4.25476e-05, 0.671806, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.424192, 0.69532, 1)
+theme_override_colors/font_outline_color = Color(0.93852, 0.634598, 0.724035, 1)
+theme_override_font_sizes/font_size = 55
+text = "MÉTODOS NUMÉRICOS QUIZZ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="LBL_TITULO"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = -30.0
+offset_right = 500.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oasli")
+
+[node name="BTN_INICIAR" type="Button" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -280.0
+offset_right = 75.0
+offset_bottom = -237.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "INICIAR"
+icon_alignment = 1
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_oasli")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_hh73t")
+
+[connection signal="pressed" from="BTN_INICIAR" to="." method="_on_btn_iniciar_pressed"]

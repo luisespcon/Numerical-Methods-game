@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://brrfsm0jkiv7d"]
+
+[ext_resource type="Script" uid="uid://bhr0fjnw823ai" path="res://scripts/End.gd" id="1_lpdj2"]
+[ext_resource type="Texture2D" uid="uid://by0wbt88kx0de" path="res://imagenes/fin.jpg" id="2_1u234"]
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lpdj2")
+
+[node name="LBL_PUNTAJE_FINAL" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_top = 387.0
+offset_right = 285.0
+offset_bottom = 555.0
+grow_horizontal = 2
+text = "¡Felicidades! Has terminado todos los métodos."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BTN_REINICIAR" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -280.0
+offset_right = 100.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "REINICIAR"
+
+[node name="FONDO_FINAL" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_1u234")
+
+[connection signal="pressed" from="BTN_REINICIAR" to="." method="_on_btn_reiniciar_pressed"]
